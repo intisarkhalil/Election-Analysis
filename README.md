@@ -1,6 +1,7 @@
 # Election Analysis
 ## Overview of Election Audit: 
-This project is conducted to assisting a Colorado Board of Election employee in an election audit of the tabulated results for U.S. Congressional precinct in Colorado. This work usually done by EXCEL, but the employee manager wants to know if there is any way to automate the process using Python. If this work done successfully with Python, the code will be used to audit, not only other congressional districts but also senatorial districts and local elections. Altogether the vote cast by three methods; Mail-in ballots, Punch card and Direct recording electronic or DRE counting machines, are used to determine the final election results [GitHub Pages]().
+
+This project is conducted to assisting a Colorado Board of Election employee in an election audit of the tabulated results for U.S. Congressional precinct in Colorado. This work usually done by EXCEL, but the employee manager wants to know if there is any way to automate the process using Python. If this work done successfully with Python, the code will be used to audit, not only other congressional districts but also senatorial districts and local elections. Altogether the vote cast by three methods; Mail-in ballots, Punch card and Direct recording electronic or DRE counting machines, are used to determine the final election results [GitHub Pages](https://github.com/intisarkhalil/Election-Analysis.git).
 The main purpose of this project is to create a vote count report to certify this US congressional race.  this report provides information about the following:
 ```
    •	Total number of votes.
@@ -9,9 +10,12 @@ The main purpose of this project is to create a vote count report to certify thi
    •	The number of votes and the percentage of votes for each candidate.
    •	The winner of the elections, the number of winning votes and the winning percentage
  ```  
-## Election-Audit Results: 
+## Election-Audit Results:
+
 1.	How many votes were cast in this congressional election?
-The total number of votes cast is 369711 votes.
+
+       ```The total number of votes cast is 369711 votes.```
+   
 2.	Provide a breakdown of the number of votes and the percentage of total votes for each county in the precinct.
 These votes distributed through counties as follows:
 ```
@@ -21,7 +25,7 @@ These votes distributed through counties as follows:
 ```
 3.	Which county had the largest number of votes?
 
-   The largest county turnout is **Denver** with 82.8% votes.
+      ```The largest county turnout is **Denver** with 82.8% votes.```
 
 4.	Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
 The results for the three candidates in the race as follow:
