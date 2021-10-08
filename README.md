@@ -1,65 +1,45 @@
 # Election Analysis
-## Project Overview
-A Colorado Board of Election employee has given the following tasks to complete the election audit of a recent local congressional election.
-1.	Calculate the total number of votes cast.
-2.	Get a complete list of candidates who received votes.
-3.	Calculate the number of votes each candidate received.
-4.	Calculate the percentage of votes each candidate won.
-5.	Determine the winner of the election based on popular vote.
-## Resources
--	Data sources: **```election_data```*** [GitHub Pages](https://github.com/intisarkhalil/Election-Analysis.git)
--	Software: Python 3.6.1, Visual Studio Code 1.5.9
-## Summary
-The analysis of the election show that:
--	There are 369711 votes cast in the election.
--	The candidates were:
-1.	Charles Casper Stockham 
-2.	Diana DeGette
-3.	Raymon Anthony Doane
--	The candidate’s results were:
-1.	Charles Casper Stockham, received 23.0% of votes and 85,213 number of votes.
-2.	Diana DeGette, received “73.8%” of votes and 272,892 number of votes.
-3.	Raymon Anthony Doane, received “3.1%” of votes and 11,606 number of votes.
--	The winner of the election was: 
--	Diana DeGette who received “73.8%” of votes and 272,892 number of votes.
-## challenge Overview
-### Challenge 1: Get the total number of votes: 
-To count up all the votes in the election dataset, we need to initialize a variable, which is called an accumulator, that will increment by 1 as we read each row in the for loop. For convenience, we will initialize a variable called ```total_votes``` to zero.
-### Challenge 2: Get the candidates in the election dataset:
-To get the candidate from each list when we iterate through the row, we can use indexing on the ```for``` loop variable, row. The Candidate column is the third column that has the second index, so we would use, ``` row[2]``` to reference the Candidate column.
-### challenge 3: Get each candidate’s votes: 
-To count the votes for each candidate while we are in the ```if``` statement. As we iterate through each row of the CSV file, we can increment the votes for each candidate by 1. 
-### Challenge 4: Calculate the percentage of votes each candidate received. 
-To retrieve the votes for each candidate and get the percentage of votes, follow these steps:
-1.	Use a for loop to iterate through the ```candidate_options = []``` list. We will get the candidate's name.
-2.	Use the``` for``` loop variable to retrieve the votes of the candidate from the ```candidate_votes = {}```dictionary.
-3.	Calculate the percentage of the vote count.
-4.	Print each candidate and the percentage of votes using ``` f-string ``` formatting.
-### Challenge 5: Get the winner of the election:
- To do this we create an if statement inside the for loop and do the following steps:
-o	Determine if the vote count that was calculated is greater than the ```winning_count```.
-o	If the vote count is greater than the ```winning_count``` and the percentage is greater than the ```winning_percentage```, set the ```winning_count``` equal to the votes and set the ```winning_percentage``` equal to the ```vote_percentage```.
-o	Set the ```winning_count``` equal to the variable, ```candidate_name```, in the for loop.
-### Challenge 6: Write the election results to a text file: 
-To modify our code so we can write the ```election_results``` to a text file.
-o	First, comment out ```print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")``` and ```print(winning_candidate_summary)``` by adding a ```#``` in front of both lines.
-o	Next, insert ```with open(file_to_save, "w")``` as ```txt_file```: after ```candidate_votes[candidate_name] += 1```. the filename ```to_save``` is in the ```"w"``` mode to write data to the file.
-o	To do this, select all the code and comments below the with open section and press the Tab key once.
-
-## Challenge Summary
-1.	The total votes should be equal to the total number of rows in election_results.csv without the header: 369,711.
-2.	The output will be a list of the candidates in the election. ```['Charles Casper Stockham', 'Diana DeGette', 'Raymon Anthony Doane']```
-3.	The output shows each candidate and their vote count: ```{'Charles Casper Stockham': 85213,'Diana DeGette': 272892, 'Raymon Anthony Doane': 11606}```
-4.	The output shows the following results.
-
+## Overview of Election Audit: 
+This project is conducted to assisting a Colorado Board of Election employee in an election audit of the tabulated results for U.S. Congressional precinct in Colorado. This work usually done by EXCEL, but the employee manager wants to know if there is any way to automate the process using Python. If this work done successfully with Python, the code will be used to audit, not only other congressional districts but also senatorial districts and local elections. Altogether the vote cast by three methods; Mail-in ballots, Punch card and Direct recording electronic or DRE counting machines, are used to determine the final election results [GitHub Pages]().
+The main purpose of this project is to create a vote count report to certify this US congressional race.  this report provides information about the following:
 ```
-    Charles Casper Stockham: received 23.04854332167558% of the vote
-    Diana DeGette: received 73.81224794501652% of the vote.
-    Raymon Anthony Doane: received 3.1392087333079077% of the vote 
+   •	Total number of votes.
+   •	The largest turnout at the county level.
+   •	Number of votes and percentage of votes for each county.
+   •	The number of votes and the percentage of votes for each candidate.
+   •	The winner of the elections, the number of winning votes and the winning percentage
+ ```  
+## Election-Audit Results: 
+1.	How many votes were cast in this congressional election?
+The total number of votes cast is 369711 votes.
+2.	Provide a breakdown of the number of votes and the percentage of total votes for each county in the precinct.
+These votes distributed through counties as follows:
 ```
-5.	Results should tell you that Diane DeGette was the winner of the election with 73.8% of the vote and 272,892 votes.
-6.	The following image show the results for challenge 6.
-![challenge 6](https://user-images.githubusercontent.com/62036983/136474020-1b8bb3db-5e89-4268-ac8b-4c2c7587b489.png)
+   •	Jefferson county has received (38,855) votes with percentage of votes 10.5%
+   •	Denver county has received (306,055) votes with percentage 82.8%
+   •	Arapahoe county has received (24,801) votes with percentage 6.7%
+```
+3.	Which county had the largest number of votes?
 
-![rrrr](https://user-images.githubusercontent.com/62036983/136475139-3998039d-c040-4745-ad2e-88bc17eaf6f1.png)
+   The largest county turnout is **Denver** with 82.8% votes.
 
+4.	Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
+The results for the three candidates in the race as follow:
+```
+   •	Charles Casper Stockham received 85213 votes with percentage 23.0%.
+   •	Diana DeGette received 272,892 votes with 73.8%.
+   •	Raymon Anthony Doane received 11,606 votes with 3.1%
+```
+5.	Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
+The winner for this election race is **```Diana DeGette, she received 73.8% of the total votes with number of votes 272,892.```**
+The following image shows the summary of the results.
+
+![summary](https://user-images.githubusercontent.com/62036983/136529989-974a8256-76bb-4c69-84a5-50cdcbb21fc9.png)
+
+## Election-Audit Summary: 
+These scripts successfully generate the county-level election report. However, it can be modified to operate at lower or higher levels as follows:
+```
+   • These scripts can be used to summarize the results of the Senate district election audit.
+   • Also, it can be used with some modification to summarize audit findings at the country level. Modify using nested loops to iterate across provinces and states.
+   • These texts can also be modified to summarize the results of the audit of local elections. The modified code must also have a nested loop to iterates the number of votes over neighborhoods and counties.
+```
